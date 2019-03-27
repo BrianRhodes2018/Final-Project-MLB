@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MLB Stats</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen" />
+
+
+</head>
+
+<body style="background-color:teal">
+    
+        <div class="W3-container" height="img-fluid" style="background-color:black">
+                   
+                <!-- Row 1 -->
+                 <div class="row">
+                    <div class="col-xs-2 col-sm-3 col-md-3" class="img-fluid" height="auto"></div>
+                    <div class="col-xs-2 col-sm-3 col-md-3" class="img-fluid" height="auto">
+                         <h1> <a href="/"><span style="color:white">MLB</span></a> </h1>
+                    </div>
+                    
+                    
+                    <div class="col-xs-3 col-sm-3 col-md-3" class="img-fluid">
+                    </div>                        
+                    <div class="col-xs-2 col-sm-2 col-md-2" class="img-fluid">   
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" >
+                                Stats
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="runs">Runs</a>
+                                            <a class="dropdown-item" href="homeruns">Homeruns</a>
+                                            <a class="dropdown-item" href="ERA">ERA</a>
+                                        </div>
+                                    </div>
+                                </div> 
+                </div>
+                
+        </div>
+        <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container" color="grey">
+        <div class="class jumbotron">
+            
+            <!-- Row 1 -->
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <h2>MLB analysis of how certain stats help predict win totals.</h2>
+                    <hr>
+                </div>
+                    <div class="col-md-4">
+                            
+                                <img src="{{url_for('static', filename='download.jpg')}}" class="img-fluid"/>
+                    </div>
+                    <div class="col-md-8">                            
+            
+                            The way baseball has viewed statistics has changed over the last 20 or so years.  
+                            Unlike most major team sports in the USA, baseball is much closer to being a one on one sport.  
+                            The majority of the time any given play comes down to the pitcher versus the hitter. 
+                            Where homeruns have always been viewed as the sexy play much like a slam dunk in basketball
+                            they do not necessarily lead to wins. Please click on a link in the dropdown menu at the
+                            top of the screen to check out how some team season totals affect win totals.
+                    </div>
+                    
+                
+            
+                
+            </div>
+           
+        </div>
+    </div>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+    <script src="{{url_for('static', filename='somejavascriptfile.js')}}"></script> 
+</body>
+
+</html>
+
+
+
+
