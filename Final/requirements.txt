@@ -1,2 +1,7 @@
+Libraries required for the app to work.
+Pandas
+ 
+SKLearn
+
 Flask
-gunicorn
+
