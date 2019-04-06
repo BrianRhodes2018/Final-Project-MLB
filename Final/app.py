@@ -39,15 +39,14 @@ def runsPlotly():
     df = pd.read_csv('runsPlotData.csv')
     runsData = df.loc[:, ["R", "W", "yearID", "franchID"]]
     # Format the data to send as json
-    labelDict = {"Runs": runsData.R.values.tolist(), "Wins": runsData.W.values.tolist(), "Year": runsData.yearID.values.tolist(), "Franchise": runsData.franchID.values.tolist()} 
-    labelDF = pd.DataFrame(labelDict)
-    Label = labelDF.from_dict(labelDict)
 
+    runsData["yearTeam"] = runsData.franchID + " " + runsData.yearID.map(str)
+    
     # for rows in runsData:
     data = {
     "Runs": runsData.R.values.tolist(),
     "Wins": runsData.W.values.tolist(),
-    "Layout": Label.values.tolist()
+    "Layout": runsData.yearTeam.values.tolist()
     }
     return jsonify(data)
     
@@ -70,15 +69,13 @@ def homerunsPlotly():
     df = pd.read_csv('runsPlotData.csv')
     homerunsData = df.loc[:, ["HR", "W", "yearID", "franchID"]]
     # Format the data to send as json
-    labelDict = {"Homeruns": homerunsData.HR.values.tolist(), "Wins": homerunsData.W.values.tolist(), "Year": homerunsData.yearID.values.tolist(), "Franchise": homerunsData.franchID.values.tolist()} 
-    labelDF = pd.DataFrame(labelDict)
-    Label = labelDF.from_dict(labelDict)
+    homerunsData["yearTeam"] = homerunsData.franchID + " " + homerunsData.yearID.map(str)
 
     # for rows in runsData:
     data = {
     "Homeruns": homerunsData.HR.values.tolist(),
     "Wins": homerunsData.W.values.tolist(),
-    "Layout": Label.values.tolist()
+    "Layout": homerunsData.yearTeam.values.tolist()
     }
     return jsonify(data)
 
@@ -101,15 +98,13 @@ def ERAPlotly():
     df = pd.read_csv('runsPlotData.csv')
     ERAData = df.loc[:, ["ERA", "W", "yearID", "franchID"]]
     # Format the data to send as json
-    labelDict = {"ERA": ERAData.ERA.values.tolist(), "Wins": ERAData.W.values.tolist(), "Year": ERAData.yearID.values.tolist(), "Franchise": ERAData.franchID.values.tolist()} 
-    labelDF = pd.DataFrame(labelDict)
-    Label = labelDF.from_dict(labelDict)
+    ERAData["yearTeam"] = ERAData.franchID + " " + ERAData.yearID.map(str)
 
     # for rows in runsData:
     data = {
     "ERA": ERAData.ERA.values.tolist(),
     "Wins": ERAData.W.values.tolist(),
-    "Layout": Label.values.tolist()
+    "Layout": ERAData.yearTeam.values.tolist()
     }
     return jsonify(data)
 
