@@ -5,7 +5,7 @@ function buildRunChart() {
      var runsTeam = data.Runs
      var winsTeam = data.Wins
      var runsLabelsData = data.Layout
-  
+     
   var trace1 = {
       x: runsTeam,
       y: winsTeam,
